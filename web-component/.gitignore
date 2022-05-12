@@ -1,0 +1,8 @@
+node_modules
+dist
+nhac-app
+release
+.DS_Store
+npm-debug.log
+.idea
+.firebase

@@ -1,0 +1,10 @@
+node_modules
+dist
+public/music-app
+public/chat-app
+public/wc-app
+release
+.DS_Store
+npm-debug.log
+.idea
+.firebase
