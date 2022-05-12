@@ -8,6 +8,7 @@ app.use(express.static('public'));
 const VueApp = (res) => res.sendFile(path.join(__dirname, '../public/vue-app/index.html'));
 const MusicApp = (res) => res.sendFile(path.join(__dirname, '../public/music-app/index.html'));
 const ReactApp = (res) => res.sendFile(path.join(__dirname, '../public/react-app/index.html'));
+const SvelteApp = (res) => res.sendFile(path.join(__dirname, '../public/svelte-app/index.html'));
 
 app.get(['/vue-app', '/vue-app/*'], (req, res) => {
   return VueApp(res);
@@ -17,6 +18,10 @@ app.get(['/music-app', '/music-app/*'], (req, res) => {
 });
 app.get(['/react-app', '/react-app/*'], (req, res) => {
   return ReactApp(res);
+});
+
+app.get(['/svelte-app', '/svelte-app/*'], (req, res) => {
+  return SvelteApp(res);
 });
 
 app.listen(port, () => {
