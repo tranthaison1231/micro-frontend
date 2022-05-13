@@ -10,7 +10,9 @@
     "build:vue-app": "cd vue-app && pnpm build",
     "build:react-app": "cd react-app && npm run build",
     "build:svelte-app": "cd svelte-app && npm run build",
-    "build:web-component": "cd web-component && npm run build"
+    "build:web-component": "cd web-component && npm run build",
+    "build:wc-react-app": "cd wc-react-app && npm run build",
+    "build:wc-svelte-app": "cd wc-svelte-app && npm run build"
   },
   "repository": {
     "type": "git"

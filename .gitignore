@@ -1,7 +1,8 @@
 node_modules
 dist
-public/music-app
-public/chat-app
+public/react-app
+public/svelte-app
+public/vue-app
 public/wc-app
 release
 .DS_Store

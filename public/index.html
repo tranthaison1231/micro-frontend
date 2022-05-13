@@ -20,31 +20,12 @@
     </ul>
   </div>
   <div>
-    <button onclick="openFancyModal()">Click here to open React Fancy Modal</button>
-    <p id="fancy-box-message"></p>
-    <wc-fancy-box></wc-fancy-box>
-    <wc-fancy-modal></wc-fancy-modal>
+    <my-counter color="green"></my-counter>
+    <wc-fancy-box name="Son Tran"> </wc-fancy-box>
+    <wc-fancy-modal> </wc-fancy-modal>
   </div>
-  <script src="/wc-app/web-components.js"></script>
-  <script>
-    var fancyModalNode = document.querySelector('wc-fancy-modal');
-    function openFancyModal() {
-      fancyModalNode._ref.ref.current.setIsModalVisible(true);
-    }
-    function onModalClose(message) {
-      document.getElementById('fancy-box-message').innerHTML = message;
-    }
-
-    if (fancyModalNode._ref) {
-      fancyModalNode._ref.setProps({
-        onModalClose: onModalClose,
-      })
-    } else {
-      fancyModalNode._initProps = Object.assign({}, fancyModalNode._initProps, {
-        onModalClose: onModalClose,
-      });
-    }
-  </script>
+  <script type="module" src="/wc-react-app/index.js"></script>
+  <script type="module" src="/wc-svelte-app/index.js"></script>
 </body>
 
 </html>
