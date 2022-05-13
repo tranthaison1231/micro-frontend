@@ -8,7 +8,7 @@ class WCFancyBox extends HTMLElement {
   }
 
   connectedCallback() {
-    ReactDOM.createRoot(this!).render(<FancyBox name={this.name} />);
+    ReactDOM.createRoot(this).render(<FancyBox name={this.name} />);
   }
 }
 
