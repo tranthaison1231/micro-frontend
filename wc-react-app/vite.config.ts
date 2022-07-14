@@ -29,7 +29,7 @@ export default defineConfig({
   build: {
     outDir: path.resolve(__dirname, '../public/wc-react-app/'),
     lib: {
-      entry: path.resolve(__dirname, 'src/index.tsx'),
+      entry: path.resolve(__dirname, 'src/wc-components/index.tsx'),
       name: 'wc-react-app',
       fileName: () => `index.js`,
     },

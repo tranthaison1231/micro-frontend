@@ -1,5 +1,67 @@
+import { PageContainer } from '@ant-design/pro-layout';
+import { Avatar, Table } from 'antd';
+import { useMemo } from 'react';
+import { useQuery } from 'react-query';
+import ReactQueryProvider from '../shared/components/ReactQueryProvider';
+
+const getUsers = async () => (await fetch('https://60da97a6801dcb0017290a37.mockapi.io/users')).json();
+
 const Dashboard = () => {
-  return <div>Dashboard</div>;
+  const { data, isLoading } = useQuery(['users'], getUsers);
+
+  const columns = useMemo(
+    () => [
+      {
+        key: 'id',
+        dataIndex: 'id',
+        title: 'ID',
+      },
+
+      {
+        key: 'avatar',
+        dataIndex: 'avatar',
+        title: 'Avatar',
+        render: (avatar: string) => <Avatar src={avatar} />,
+      },
+      {
+        key: 'name',
+        dataIndex: 'name',
+        title: 'Name',
+      },
+      {
+        key: 'phoneNumber',
+        dataIndex: 'phone',
+        title: 'Phone Number',
+      },
+      {
+        key: 'actions',
+        dataIndex: 'id',
+        title: 'Actions',
+      },
+    ],
+    []
+  );
+  return (
+    <div>
+      <Table
+        dataSource={data?.items ?? []}
+        columns={columns}
+        loading={isLoading}
+        rowKey="id"
+        pagination={{
+          total: data?.count,
+        }}
+      />
+    </div>
+  );
 };
 
-export default Dashboard;
+const DashboardContainer = () => {
+  return (
+    <ReactQueryProvider>
+      <Dashboard />
+    </ReactQueryProvider>
+  );
+};
+
+export default DashboardContainer;
