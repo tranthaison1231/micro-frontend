@@ -41,17 +41,15 @@ const Dashboard = () => {
     []
   );
   return (
-    <div>
-      <Table
-        dataSource={data?.items ?? []}
-        columns={columns}
-        loading={isLoading}
-        rowKey="id"
-        pagination={{
-          total: data?.count,
-        }}
-      />
-    </div>
+    <Table
+      dataSource={data?.items ?? []}
+      columns={columns}
+      loading={isLoading}
+      rowKey="id"
+      pagination={{
+        total: data?.count,
+      }}
+    />
   );
 };
 
