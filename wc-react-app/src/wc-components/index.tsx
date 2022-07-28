@@ -14,8 +14,12 @@ class WCFancyBox extends HTMLElement {
 }
 
 class WCFancyModal extends HTMLElement {
+  get onbuy() {
+    const fnc = this.getAttribute('onbuy');
+    return typeof fnc === 'function' ? fnc : undefined;
+  }
   connectedCallback() {
-    ReactDOM.createRoot(this!).render(<FancyModal />);
+    ReactDOM.createRoot(this!).render(<FancyModal onBuy={this.onbuy} />);
   }
 }
 

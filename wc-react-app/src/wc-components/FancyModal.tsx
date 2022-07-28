@@ -1,6 +1,10 @@
 import { Result, Button } from 'antd';
 
-export default () => (
+interface Props {
+  onBuy?: (data: { a: string }) => void;
+}
+
+export default ({ onBuy }: Props) => (
   <Result
     status="success"
     title="Successfully Purchased Cloud Server ECS!"
@@ -9,7 +13,9 @@ export default () => (
       <Button type="primary" key="console">
         Go Console
       </Button>,
-      <Button key="buy">Buy Again</Button>,
+      <Button key="buy" onClick={() => onBuy?.({ a: 'hello' })}>
+        Buy Again
+      </Button>,
     ]}
   />
 );

@@ -30,9 +30,15 @@
   <div>
     <my-counter color="green"></my-counter>
     <wc-fancy-box name="Son Tran"> </wc-fancy-box>
-    <wc-fancy-modal> </wc-fancy-modal>
+    <wc-fancy-modal id="wc-fancy-modal"> </wc-fancy-modal>
     <wc-dashboard></wc-dashboard>
   </div>
+  <script>
+    document.querySelector('#wc-fancy-modal').onsuccess = function (data) {
+      window.location.replace("http://www.w3schools.com");
+    };
+
+  </script>
   <script type="module" src="/wc-react-app/index.js"></script>
   <script type="module" src="/wc-svelte-app/index.js"></script>
 </body>
